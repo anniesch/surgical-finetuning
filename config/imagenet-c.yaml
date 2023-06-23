@@ -1,0 +1,33 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - user: annie
+
+wandb:
+  project: surgical-finetuning
+  exp_name: none
+  sweep_filename: none
+  use: false
+  
+data:
+  dataset_name: imagenet-c
+  model_name: Standard_R50 
+  corruption_types: [brightness]
+  severity: 5
+  batch_size: 64
+  num_workers: 2
+
+args:
+  train_mode: eval
+  tune_option: first_two
+  train_n: 1000
+  epochs: 10 
+  seed: 0
+  log_dir: imagenet
+  auto_tune: none
+  
+hydra:
+  output_subdir: hydra
+  run:
+    dir: ./results/${data.dataset_name}/${data.corruption_types[0]}
