@@ -19,7 +19,7 @@ dependencies:
     - tensorboard==2.8.0
     - imageio==2.9.0
     - imageio-ffmpeg==0.4.4
-    - hydra-core==1.1.0
+    - hydra-core==1.2.0
     - hydra-submitit-launcher==1.1.5
     - ipdb==0.13.9
     - yapf==0.31.0

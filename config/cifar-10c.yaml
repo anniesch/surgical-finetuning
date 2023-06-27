@@ -2,7 +2,7 @@
 
 defaults:
   - _self_
-  - user: annie
+  - user: username
 
 wandb:
   project: surgical-finetuning

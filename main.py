@@ -5,6 +5,7 @@ import time
 from collections import defaultdict
 import copy
 
+import pathlib
 from pathlib import Path
 from datetime import date
 import hydra
@@ -102,9 +103,9 @@ def train(model, loader, criterion, opt, cfg, orig_model=None):
     return acc, total_loss, magnitudes
 
 
-@hydra.main(version_base=None, config_path="config", config_name="config")
+@hydra.main(config_path="config", config_name="config")
 def main(cfg):
-    cfg.args.log_dir = Path.cwd()
+    cfg.args.log_dir = pathlib.Path.cwd()
     cfg.args.log_dir = os.path.join(
         cfg.args.log_dir, "results", cfg.data.dataset_name, date.today().strftime("%Y.%m.%d"), cfg.args.auto_tune
     )
